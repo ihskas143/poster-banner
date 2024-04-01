@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div class="hero">
+      <div class="card">
+        <div id="prevText"></div>
+        
+        
+        <h3 class="h1">content</h3>
+        <h3 class="h3">content</h3>
+        <h3 class="h4">content</h3>
+        <h3 class="h5">content</h3>
+        <textarea id="textBox" placeholder="Add Caption"></textarea>
+
+        <img src="images/unknown.webp" id="profile-pic" />
+        <label for="input-file">Choose Image</label>
+        <input
+          type="file"
+          accept="image/jpeg image/png, image/jpg"
+          id="input-file"
+        />
+
+        
+      </div>
+      
+
+       
+     
+      </div>
+    </div>
+
+    <script>
+      let profilePic = document.getElementById("profile-pic");
+      let inputFile = document.getElementById("input-file");
+      var textBox = document.getElementById("textBox");
+
+      textBox.onkeyup = textBox.onkeypress = function () {
+        document.getElementById("prevText").innerHTML = this.value;
+      };
+
+      inputFile.onchange = function () {
+        profilePic.src = URL.createObjectURL(inputFile.files[0]);
+      };
+    </script>
+  </body>
+</html>
